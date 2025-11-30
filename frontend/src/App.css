@@ -1,0 +1,101 @@
+/* Center page layout */
+.container {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  background: #f0f2f5;
+  min-height: 100vh;
+}
+
+/* Card box */
+.card {
+  width: 800px;
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Title */
+.title {
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Room controls */
+.room-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+/* Button styles */
+.btn {
+  padding: 10px 16px;
+  border: none;
+  background: #444;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #222;
+}
+
+.btn.primary {
+  background: #007bff;
+}
+
+.btn.primary:hover {
+  background: #005ad6;
+}
+
+/* Input */
+.input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Connected badge */
+.badge {
+  margin-bottom: 15px;
+  padding: 8px 14px;
+  background: #eaf8ff;
+  border-left: 4px solid #0096ff;
+  color: #0075c9;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Editor */
+.editor {
+  width: 100%;
+  height: 320px;
+  padding: 12px;
+  font-size: 15px;
+  font-family: monospace;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+  outline: none;
+  resize: vertical;
+}
+
+/* Suggestion box */
+.suggestion-box {
+  margin-top: 12px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.suggest-title {
+  font-weight: bold;
+  margin-right: 5px;
+}
