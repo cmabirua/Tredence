@@ -2,9 +2,9 @@
 import uvicorn
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
-from .routers import rooms, autocomplete
-from .ws_manager import manager
-from .storage import get_room, create_room, upsert_room_code
+from routers import rooms, autocomplete
+from ws_manager import manager
+from storage import get_room, create_room, upsert_room_code
 
 app = FastAPI(title="PairProg Prototype (JSON storage)")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
@@ -53,4 +53,4 @@ async def websocket_endpoint(websocket: WebSocket, room_id: str):
             pass
 
 if __name__ == "__main__":
-    uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

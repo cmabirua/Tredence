@@ -1,6 +1,6 @@
 # backend/app/routers/autocomplete.py
 from fastapi import APIRouter
-from ..schemas import AutocompleteRequest, AutocompleteResponse
+from schema import AutocompleteRequest, AutocompleteResponse
 
 router = APIRouter()
 

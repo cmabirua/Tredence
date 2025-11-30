@@ -1,6 +1,6 @@
 # backend/app/routers/rooms.py
 from fastapi import APIRouter
-from ..storage import create_room
+from storage import create_room
 import uuid
 
 router = APIRouter()
