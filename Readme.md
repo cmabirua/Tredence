@@ -1,25 +1,28 @@
-# 🚀 Real-Time Pair Programming Web App  
-FastAPI (Backend) + WebSockets + JSON Storage + React JS UI
+# 🚀 Real-Time Pair Programming Web Application  
+**FastAPI Backend + WebSockets + JSON Storage + React (JavaScript) Frontend**  
+**Includes Makefile for Easy Setup**
 
-This project is a simplified real-time pair programming web application where two users can:
-- Join the same room
-- Edit code simultaneously
-- See updates instantly via WebSockets
-- Receive AI-style mocked autocomplete suggestions
+---
 
-Backend uses FastAPI, WebSockets, and a JSON file instead of a database.  
-Frontend is built with React (JavaScript).
+## 📌 Overview  
+This project is a fully functional **real-time pair programming prototype**.  
+It allows multiple users to join a shared room and collaborate on code instantly.
 
-## ⭐ Features
-- Real-time collaboration
-- WebSocket-based live sync
-- Mocked AI autocomplete
-- JSON file storage
-- Modern styled UI
+### Features include:
+- FastAPI backend (Python)
+- WebSockets for live collaboration
+- JSON file storage (no DB)
+- React JS UI
+- Modern designer UI
+- Mock AI autocomplete suggestions
 
-## 📁 Project Structure
+---
+
+## 📁 Folder Structure
+```
 project/
 ├── backend/
+│   ├── Makefile
 │   ├── requirements.txt
 │   ├── rooms.json
 │   └── app/
@@ -37,85 +40,115 @@ project/
     ├── src/
     │   ├── App.js
     │   ├── App.css
-    │   └── main.jsx
+    │   ├── main.jsx
+    │   └── index.css
     └── public/
+```
 
-## ⚙️ Installation & Running Guide
+---
 
-### Backend (FastAPI)
-1. Create virtual environment  
+# ⚙️ Running the Project (Makefile)
+
+## 🟣 Backend Setup (FastAPI)
+
+### 1. Create Virtual Environment
+```
+make backend-venv
+```
+
+### 2. Activate Virtual Environment
 Mac/Linux:
 ```
-python3 -m venv venv
+source backend/venv/bin/activate
 ```
 Windows:
 ```
-python -m venv venv
+backend\venv\Scripts\activate
 ```
 
-2. Activate environment  
-Mac/Linux:
+### 3. Install Dependencies
 ```
-source venv/bin/activate
-```
-Windows:
-```
-venv\Scripts\activate
+make install-backend
 ```
 
-3. Install requirements:
+### 4. Run Backend Server
 ```
-pip install -r requirements.txt
-```
-
-4. Run backend:
-```
-cd backend/app
-python3 main.py
+make run-backend
 ```
 
-### Frontend (React)
-Open new terminal:
+---
 
-1. Navigate to frontend:
-```
-cd frontend
-```
+## 🟡 Frontend Setup (React JS)
 
-2. Install dependencies:
+Open another terminal window:
+
+### 1. Install Dependencies
 ```
-npm install
+make install-frontend
 ```
 
-3. Run UI:
+### 2. Run Frontend UI
 ```
-npm start
+make run-frontend
 ```
 
-## 🔌 API Endpoints
-### POST /rooms
-Creates a new room.
+Frontend runs at:  
+👉 http://localhost:3000
 
-### POST /autocomplete
-Returns mocked AI suggestions.
+Backend runs at:  
+👉 http://localhost:8000  
+👉 WebSocket: ws://localhost:8000/ws/{roomId}
 
-### WebSocket /ws/{roomId}
-Handles real-time code synchronization.
+---
 
-## 🛠️ Tech Stack
-- FastAPI
-- WebSockets
-- React JS
-- JSON File Storage
+# 🔌 API Endpoints
 
-## 🚧 Limitations
-- Not designed for multi-node scaling
-- No authentication
-- Simple last-write-wins model
+### **POST /rooms**
+Creates a new collaboration room.
 
-## 🚀 Future Improvements
-- Monaco editor
-- Authentication
-- File tree support
-- Database integration
+### **POST /autocomplete**
+Returns a mocked AI suggestion.
 
+### **WebSocket /ws/{roomId}**
+Supports:
+```
+{ "type": "edit", "code": "..." }
+{ "type": "cursor", "cursor": {...} }
+```
+
+---
+
+# 🛠 Tech Stack
+
+### Backend
+- Python 3.x  
+- FastAPI  
+- WebSockets  
+- JSON file storage  
+
+### Frontend
+- React  
+- JavaScript  
+- CSS  
+
+---
+
+# 🚧 Limitations
+- JSON file not suitable for production  
+- No authentication  
+- Last-write-wins sync  
+- No multi-server scaling  
+
+---
+
+# 🚀 Future Improvements
+- Replace textarea → Monaco Editor  
+- Add authentication  
+- Add file explorer  
+- Database support  
+- Real AI autocomplete  
+
+---
+
+# 🎉 Status
+Project is fully functional as a real-time collaboration prototype.
